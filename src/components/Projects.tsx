@@ -44,14 +44,12 @@ const projects: Project[] = [
 const Projects = () => {
   return (
     <section id="projects" className="flex flex-col gap-1">
-      <h1 className="flex gap-1 items-center font-bold">
+      <a href="#projects" className="flex gap-1 items-center font-bold">
         Projects{" "}
         <span>
-          <Link scroll href="#projects">
-            <HashIcon size={16} />
-          </Link>
+          <HashIcon size={16} />
         </span>
-      </h1>
+      </a>
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
           <a

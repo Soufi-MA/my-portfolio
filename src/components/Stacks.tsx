@@ -123,14 +123,12 @@ const stacks: Stack[] = [
 const Stacks = () => {
   return (
     <section id="stacks" className="flex flex-col gap-1">
-      <h1 className="flex gap-1 items-center font-bold">
+      <a href="#stacks" className="flex gap-1 items-center font-bold">
         Stacks{" "}
         <span>
-          <Link scroll href="#stacks">
-            <HashIcon size={16} />
-          </Link>
+          <HashIcon size={16} />
         </span>
-      </h1>
+      </a>
       <div className={"flex flex-wrap gap-2"}>
         {stacks.map((stack) => {
           const color = stack.color;
@@ -140,7 +138,7 @@ const Stacks = () => {
               className={`flex gap-1 p-2 border rounded-md items-center cursor-pointer text-lg font-semibold hover:text-${color}-500 hover:shadow-custom hover:shadow-${color}-500 transition-all duration-300`}
             >
               <stack.icon size={18} />
-              <p>{stack.name}</p>
+              <p className="select-none">{stack.name}</p>
             </div>
           );
         })}

@@ -9,14 +9,12 @@ const Contacts = () => {
       className="flex flex-col gap-1"
       style={{ scrollBehavior: "smooth" }}
     >
-      <h1 className="flex gap-1 items-center font-bold">
+      <a href="#contacts" className="flex gap-1 items-center font-bold">
         Contacts{" "}
         <span>
-          <Link href="#contacts">
-            <HashIcon size={16} />
-          </Link>
+          <HashIcon size={16} />
         </span>
-      </h1>
+      </a>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-1">
         <p className="max-md:hidden">Email:</p>
         <a
