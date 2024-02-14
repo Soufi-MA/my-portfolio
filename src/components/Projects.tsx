@@ -7,6 +7,7 @@ interface Project {
   title: string;
   body: string;
   stack: string[];
+  url: string;
 }
 
 const projects: Project[] = [
@@ -22,11 +23,12 @@ const projects: Project[] = [
       "NextAuth",
       "Stripe",
     ],
+    url: "https://ethiopian-railways.onrender.com",
   },
   {
     id: 2,
     title: "3D furniture store",
-    body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ullam voluptates, ratione inventore obcaecati deleniti minima, dignissimos assumenda autem debitis nisi beatae? Nobis, ipsa dolorem?",
+    body: "Revolutionize the way you source furniture for your creative projects. An innovative platform built specifically for designers, architects, and engineers, offering a seamless experience to find, explore, and source the perfect furniture for your vision.",
     stack: [
       "Next.js",
       "Tailwind CSS",
@@ -35,6 +37,7 @@ const projects: Project[] = [
       "WebGL",
       "PayloadCMS",
     ],
+    url: "https://furniture-store-3pnl.onrender.com",
   },
 ];
 
