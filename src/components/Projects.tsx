@@ -54,8 +54,11 @@ const Projects = () => {
       </h1>
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
-          <div
+          <a
             key={project.id}
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full flex flex-col gap-2 px-4 py-2 border rounded-md bg-muted hover:scale-[1.01] transition-all duration-100 ease-in cursor-pointer"
           >
             <h2 className="font-bold">{project.title}</h2>
@@ -70,7 +73,7 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
