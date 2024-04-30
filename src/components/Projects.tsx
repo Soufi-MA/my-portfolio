@@ -13,7 +13,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "3D furniture store",
+    title: "Kabu furniture store",
     body: "Revolutionize the way you source furniture for your creative projects. An innovative platform built specifically for designers, architects, and engineers, offering a seamless experience to find, explore, and source the perfect furniture for your vision.",
     stack: [
       "Next.js",
@@ -27,7 +27,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Ethiopian Railways",
+    title: "Ethiopian Railways (Final year project),",
     body: "Experience the convenience of modern rail travel with the Ethiopian Railways online ticket reservation system, built with cutting-edge technologies for a smooth and secure journey.",
     stack: [
       "Next.js",
