@@ -13,6 +13,20 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "3D furniture store",
+    body: "Revolutionize the way you source furniture for your creative projects. An innovative platform built specifically for designers, architects, and engineers, offering a seamless experience to find, explore, and source the perfect furniture for your vision.",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "Three.js",
+      "MongoDB",
+      "WebGL",
+      "PayloadCMS",
+    ],
+    url: "https://test.kabu.et/",
+  },
+  {
+    id: 2,
     title: "Ethiopian Railways",
     body: "Experience the convenience of modern rail travel with the Ethiopian Railways online ticket reservation system, built with cutting-edge technologies for a smooth and secure journey.",
     stack: [
@@ -24,20 +38,6 @@ const projects: Project[] = [
       "Stripe",
     ],
     url: "https://ethiopian-railways.onrender.com",
-  },
-  {
-    id: 2,
-    title: "3D furniture store",
-    body: "Revolutionize the way you source furniture for your creative projects. An innovative platform built specifically for designers, architects, and engineers, offering a seamless experience to find, explore, and source the perfect furniture for your vision.",
-    stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "Three.js",
-      "MongoDB",
-      "WebGL",
-      "PayloadCMS",
-    ],
-    url: "https://furniture-store-3pnl.onrender.com",
   },
 ];
 
