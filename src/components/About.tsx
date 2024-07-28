@@ -11,7 +11,7 @@ const About = () => {
       </a>
       <p className="font-light">
         I&apos;m Mahmoud, a Computer Science graduate based in Addis Ababa,
-        Ethiopia, with over 3 years of experience crafting dynamic web
+        Ethiopia, with over 4 years of experience crafting dynamic web
         experiences. My journey began with the fundamentals of PHP, but my
         passion for innovation led me to explore the React and Next.js
         ecosystems, where I now build interactive and performant applications.
