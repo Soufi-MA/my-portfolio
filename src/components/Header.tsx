@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 import { Github } from "lucide-react";
 import { Separator } from "./ui/separator";
-import Link from "next/link";
 
 const Header = () => {
   return (
