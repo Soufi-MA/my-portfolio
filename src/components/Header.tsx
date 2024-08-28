@@ -2,27 +2,40 @@ import Image from "next/image";
 import { ModeToggle } from "./ui/toggle";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
-import { Github } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { getDictionary } from "../app/[lang]/dictionaries";
+import { SiGithub } from "react-icons/si";
+import LocaleSwitcher from "./locale-switcher";
 
-const Header = () => {
+const Header = ({
+  dict,
+  lang,
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>;
+  lang: "en" | "ar";
+}) => {
   return (
     <>
-      <section className="w-full flex justify-between items-center">
+      <section
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        className="w-full flex justify-between items-center"
+      >
         <div className="flex items-center gap-2">
           <div className="rounded-full h-[64px] w-[64px]">
             <Image
               className="rounded-full object-cover"
-              src="/profile.png"
+              src={"/profile.png"}
               alt="profile"
               width={64}
               height={64}
             />
           </div>
           <div className="flex flex-col">
-            <p className="text-foreground font-semibold">Mahmoud Soufi</p>
-            <p className="text-muted-foreground">Full Stack Developer</p>
-            <p className="text-muted-foreground">UI/UX</p>
+            <p className="text-foreground font-semibold">
+              {dict.developer.name}
+            </p>
+            <p className="text-muted-foreground">{dict.developer.position1}</p>
+            <p className="text-muted-foreground">{dict.developer.position2}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -33,8 +46,9 @@ const Header = () => {
             rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: "outline", size: "icon" }))}
           >
-            <Github />
+            <SiGithub className="h-[48px] w-[48px] p-2" />
           </a>
+          <LocaleSwitcher lang={lang} />
         </div>
       </section>
       <Separator />

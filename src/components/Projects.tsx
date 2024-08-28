@@ -1,3 +1,5 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import { cn } from "@/lib/utils";
 import { HashIcon } from "lucide-react";
 
 interface Project {
@@ -39,11 +41,21 @@ const projects: Project[] = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({
+  dict,
+  lang,
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>;
+  lang: "ar" | "en";
+}) => {
   return (
-    <section id="projects" className="flex flex-col gap-1">
+    <section
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      id="projects"
+      className="flex flex-col gap-1"
+    >
       <a href="#projects" className="flex gap-1 items-center font-bold">
-        Projects{" "}
+        {dict.headers.projects}{" "}
         <span>
           <HashIcon size={16} />
         </span>

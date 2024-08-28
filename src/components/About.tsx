@@ -1,21 +1,26 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import { HashIcon } from "lucide-react";
 
-const About = () => {
+const About = ({
+  dict,
+  lang,
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>;
+  lang: "ar" | "en";
+}) => {
   return (
-    <section id="about" className="flex flex-col gap-1">
+    <section
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      id="about"
+      className="flex flex-col gap-1"
+    >
       <a href="#about" className="flex gap-1 items-center font-bold">
-        About{" "}
+        {dict.headers.about}{" "}
         <span>
           <HashIcon size={16} />
         </span>
       </a>
-      <p className="font-light">
-        I&apos;m Mahmoud, a Computer Science graduate based in Addis Ababa,
-        Ethiopia, with over 4 years of experience crafting dynamic web
-        experiences. My journey began with the fundamentals of PHP, but my
-        passion for innovation led me to explore the React and Next.js
-        ecosystems, where I now build interactive and performant applications.
-      </p>
+      <p className="font-light">{dict.about}</p>
     </section>
   );
 };

@@ -1,134 +1,27 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import { HashIcon } from "lucide-react";
-import { IconType } from "react-icons";
-import {
-  SiExpress,
-  SiGit,
-  SiGo,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiNextui,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPython,
-  SiReact,
-  SiRedis,
-  SiTailwindcss,
-  SiThreedotjs,
-  SiTypescript,
-} from "react-icons/si";
 
-interface Stack {
-  id: number;
-  name: string;
-  icon: IconType;
-  color: string;
-}
-
-const stacks: Stack[] = [
-  {
-    id: 1,
-    name: "React",
-    icon: SiReact,
-    color: "cyan",
-  },
-  {
-    id: 2,
-    name: "Next.js",
-    icon: SiNextdotjs,
-    color: "white",
-  },
-  {
-    id: 3,
-    name: "Express",
-    icon: SiExpress,
-    color: "red",
-  },
-  {
-    id: 4,
-    name: "Node.js",
-    icon: SiNodedotjs,
-    color: "green",
-  },
-  {
-    id: 5,
-    name: "PostgreSQL",
-    icon: SiPostgresql,
-    color: "cyan",
-  },
-  {
-    id: 6,
-    name: "MongoDB",
-    icon: SiMongodb,
-    color: "green",
-  },
-  {
-    id: 7,
-    name: "Redis",
-    icon: SiRedis,
-    color: "red",
-  },
-  {
-    id: 8,
-    name: "JavaScript",
-    icon: SiJavascript,
-    color: "yellow",
-  },
-  {
-    id: 9,
-    name: "TypeScript",
-    icon: SiTypescript,
-    color: "cyan",
-  },
-  {
-    id: 10,
-    name: "Golang",
-    icon: SiGo,
-    color: "cyan",
-  },
-  {
-    id: 11,
-    name: "Python",
-    icon: SiPython,
-    color: "blue",
-  },
-  {
-    id: 12,
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    color: "cyan",
-  },
-  {
-    id: 13,
-    name: "Shadcn UI",
-    icon: SiNextui,
-    color: "white",
-  },
-  {
-    id: 14,
-    name: "Three.js",
-    icon: SiThreedotjs,
-    color: "white",
-  },
-  {
-    id: 15,
-    name: "Git",
-    icon: SiGit,
-    color: "red",
-  },
-];
-
-const Stacks = () => {
+const Stacks = ({
+  dict,
+  lang,
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>;
+  lang: "ar" | "en";
+}) => {
   return (
-    <section id="stacks" className="flex flex-col gap-1">
+    <section
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      id="stacks"
+      className="flex flex-col gap-1"
+    >
       <a href="#stacks" className="flex gap-1 items-center font-bold">
-        Stacks{" "}
+        {dict.headers.stacks}{" "}
         <span>
           <HashIcon size={16} />
         </span>
       </a>
       <div className={"flex flex-wrap gap-2"}>
-        {stacks.map((stack) => {
+        {dict.stacks.map((stack) => {
           const color = stack.color;
           return (
             <div
