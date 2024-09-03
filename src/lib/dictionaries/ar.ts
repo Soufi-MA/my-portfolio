@@ -9,6 +9,21 @@ export const ar = {
   hero: {
     headline: "مرحبًا, أنا محمود",
     subheadline: "مطور ويب",
+    buttons: [
+      {
+        id: 1,
+        label: "السيرة الذاتية",
+        variant: "",
+        href: "/pdf/Soufi%27s%20Resume.pdf",
+        download: true,
+      },
+      {
+        id: 2,
+        label: "جيتهب",
+        variant: "outline",
+        href: "https://github.com/Soufi-MA/",
+      },
+    ],
   },
   developer: {
     name: "محمود الصوفي",

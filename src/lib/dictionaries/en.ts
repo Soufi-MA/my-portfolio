@@ -9,6 +9,21 @@ export const en = {
   hero: {
     headline: "Hi, I'm Soufi",
     subheadline: "Fullstack Developer",
+    buttons: [
+      {
+        id: 1,
+        label: "Download CV",
+        variant: "",
+        href: "/pdf/Soufi%27s%20Resume.pdf",
+        download: true,
+      },
+      {
+        id: 2,
+        label: "Github",
+        variant: "outline",
+        href: "https://github.com/Soufi-MA/",
+      },
+    ],
   },
   developer: {
     name: "Mahmoud Soufi",
