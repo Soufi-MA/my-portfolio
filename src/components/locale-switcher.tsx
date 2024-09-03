@@ -21,7 +21,7 @@ export default function LocaleSwitcher({ lang }: { lang: "ar" | "en" }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="text-lg" variant="outline" size={"icon"}>
+        <Button className="text-lg" variant="ghost" size={"icon"}>
           {lang}
         </Button>
       </DropdownMenuTrigger>
