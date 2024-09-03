@@ -15,7 +15,6 @@ export default function LocaleSwitcher({ lang }: { lang: "ar" | "en" }) {
     if (!pathName) return "/";
     const segments = pathName.split("/");
     segments[1] = lang;
-    console.log(segments.join("/"));
     return segments.join("/");
   };
 
@@ -23,19 +22,27 @@ export default function LocaleSwitcher({ lang }: { lang: "ar" | "en" }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button className="text-lg" variant="outline" size={"icon"}>
-          {lang === "en" ? "🇬🇧" : "🇸🇦"}
+          {lang}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem
+          className="flex justify-between"
           onClick={() => router.replace(redirectedPathName("en"))}
         >
-          English 🇬🇧
+          <div className="flex flex-col">
+            <p>English</p>
+            <p className="text-xs text-muted-foreground">English</p>
+          </div>
         </DropdownMenuItem>
         <DropdownMenuItem
+          className="flex justify-between"
           onClick={() => router.replace(redirectedPathName("ar"))}
         >
-          Arabic 🇸🇦
+          <div className="flex flex-col">
+            <p>Arabic</p>
+            <p className="text-xs text-backgroundmuted-foreground">العربية</p>
+          </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
