@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/ui/Navbar";
+import { getDictionary } from "./dictionaries";
 export const metadata: Metadata = {
   title: "Soufi Portfolio",
   description: "A Full Stack Developer",
