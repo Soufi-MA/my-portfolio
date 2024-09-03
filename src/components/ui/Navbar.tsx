@@ -8,8 +8,6 @@ import { ModeToggle } from "./toggle";
 import LocaleSwitcher from "../locale-switcher";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { AlignJustify } from "lucide-react";
-import { Button } from "./button";
 
 const Navbar = ({
   dict,
