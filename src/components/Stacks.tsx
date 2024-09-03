@@ -21,7 +21,7 @@ const Stacks = ({
         </span>
       </a>
       <div className={"flex flex-wrap gap-2"}>
-        {dict.stacks.map((stack) => {
+        {/* {dict.stacks.map((stack) => {
           const color = stack.color;
           return (
             <div
@@ -32,7 +32,7 @@ const Stacks = ({
               <p className="select-none">{stack.name}</p>
             </div>
           );
-        })}
+        })} */}
       </div>
     </section>
   );
