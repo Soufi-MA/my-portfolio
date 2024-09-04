@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/ui/Navbar";
 import { getDictionary } from "./dictionaries";
+import Footer from "@/components/ui/Footer";
 export const metadata: Metadata = {
   title: "Soufi Portfolio",
   description: "A Full Stack Developer",
@@ -27,7 +28,7 @@ export default async function RootLayout({
       className="scroll-smooth"
       suppressHydrationWarning
     >
-      <body className={cn(ibm.className, "flex flex-col")}>
+      <body className={cn(ibm.className, "flex flex-col gap-4")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,6 +37,7 @@ export default async function RootLayout({
         >
           <Navbar dict={dict} lang={params.lang} />
           {children}
+          <Footer dict={dict} lang={params.lang} />
         </ThemeProvider>
       </body>
     </html>
