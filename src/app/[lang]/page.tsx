@@ -15,7 +15,7 @@ export default async function Home({
           background: "conic-gradient(from 2.35rad,#4ecdc4,#0658f6)",
         }}
         className={cn(
-          "absolute top-[25%] w-[40%] h-1/4 blur-[100px] -z-10 opacity-30 dark:opacity-25",
+          "absolute top-[calc(100vh/4)] w-[40%] h-[calc(100vh/4)] blur-[100px] -z-10 opacity-30 dark:opacity-25",
           {
             "left-0": lang === "en",
             "right-0": lang === "ar",
