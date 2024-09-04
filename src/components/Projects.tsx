@@ -1,9 +1,11 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { cn } from "@/lib/utils";
 import { HashIcon } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   id: number;
+  thumbnail: string;
   title: string;
   body: string;
   stack: string[];
@@ -13,7 +15,8 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Kabu furniture store",
+    title: "Kabu",
+    thumbnail: "/projects/kabu_thumbnail.png",
     body: "Revolutionize the way you source furniture for your creative projects. An innovative platform built specifically for designers, architects, and engineers, offering a seamless experience to find, explore, and source the perfect furniture for your vision.",
     stack: [
       "Next.js",
@@ -27,7 +30,38 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Ethiopian Railways (Final year project),",
+    title: "Ethiopian Railways",
+    thumbnail: "/projects/railways_thumbnail.png",
+    body: "Experience the convenience of modern rail travel with the Ethiopian Railways online ticket reservation system, built with cutting-edge technologies for a smooth and secure journey.",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "Express",
+      "PostgreSQL",
+      "NextAuth",
+      "Stripe",
+    ],
+    url: "https://ethiopian-railways.onrender.com",
+  },
+  {
+    id: 3,
+    title: "Harmony",
+    thumbnail: "/projects/harmony_thumbnail.png",
+    body: "Experience the convenience of modern rail travel with the Ethiopian Railways online ticket reservation system, built with cutting-edge technologies for a smooth and secure journey.",
+    stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "Express",
+      "PostgreSQL",
+      "NextAuth",
+      "Stripe",
+    ],
+    url: "https://ethiopian-railways.onrender.com",
+  },
+  {
+    id: 4,
+    title: "Tribond Trading",
+    thumbnail: "/projects/tribond_thumbnail.png",
     body: "Experience the convenience of modern rail travel with the Ethiopian Railways online ticket reservation system, built with cutting-edge technologies for a smooth and secure journey.",
     stack: [
       "Next.js",
@@ -49,43 +83,30 @@ const Projects = ({
   lang: "ar" | "en";
 }) => {
   return (
-    <section
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      id="projects"
-      className="flex flex-col gap-1"
-    >
-      <a href="#projects" className="flex gap-1 items-center font-bold">
-        {dict.headers.projects}{" "}
-        <span>
-          <HashIcon size={16} />
-        </span>
-      </a>
-      <div className="flex flex-col gap-4">
+    <section id="projects" className="container flex flex-col gap-8">
+      <h2 className="text-center text-4xl">Selected Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project) => (
-          <a
-            key={project.id}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full flex flex-col gap-2 px-4 py-2 border rounded-md bg-muted hover:scale-[1.01] transition-all duration-100 ease-in cursor-pointer"
-          >
-            <h2 className="font-bold">{project.title}</h2>
-            <p className="text-muted-foreground">{project.body}</p>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((stack) => (
-                <span
-                  key={stack}
-                  className="border px-4 py-2 bg-primary text-primary-foreground rounded-md"
-                >
-                  {stack}
-                </span>
-              ))}
-            </div>
-          </a>
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
   );
 };
+
+const ProjectCard = ({ project }: { project: Project }) => (
+  <div className="relative w-full border rounded-xl h-[480px] overflow-hidden group cursor-pointer">
+    <h2 className="absolute top-4 left-4 right-4 z-10 text-4xl text-center text-white font-semibold">
+      {project.title}
+    </h2>
+    <Image
+      className="h-full w-full rounded-xl group-hover:scale-110 transition-all duration-200 ease-in object-cover"
+      src={project.thumbnail}
+      alt=""
+      height={480}
+      width={660}
+    />
+  </div>
+);
 
 export default Projects;

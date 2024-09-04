@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import { getDictionary } from "./dictionaries";
 import { cn } from "@/lib/utils";
+import Projects from "../../components/Projects";
 
 export default async function Home({
   params: { lang },
@@ -23,6 +24,7 @@ export default async function Home({
         )}
       ></span>
       <Hero dict={dict} lang={lang} />
+      <Projects dict={dict} lang={lang} />
     </div>
   );
 }
