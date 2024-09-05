@@ -10,7 +10,7 @@ const page = async ({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="pt-28">
+    <div className="container pt-28">
       <Projects dict={dict} lang={lang} />
     </div>
   );
