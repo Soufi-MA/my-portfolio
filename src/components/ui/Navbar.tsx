@@ -28,7 +28,7 @@ const Navbar = ({
     {
       id: 2,
       href: `/${lang}/projects`,
-      label: dict.headers.projects,
+      label: dict.headers.projects.headline,
     },
     {
       id: 3,
