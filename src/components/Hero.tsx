@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { getDictionary } from "../app/[lang]/dictionaries";
 import { buttonVariants } from "./ui/button";
-import Link from "next/link";
 
 const Hero = ({
   dict,
@@ -14,7 +12,7 @@ const Hero = ({
     <>
       <section
         dir={lang === "ar" ? "rtl" : "ltr"}
-        className="w-full min-h-screen container flex flex-col items-center sm:items-start"
+        className="w-full max-sm:min-h-screen sm:pb-48 sm:pt-72 container flex flex-col items-center sm:items-start"
       >
         <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full">
           <p className="text-4xl sm:text-6xl">{dict.hero.headline}</p>
