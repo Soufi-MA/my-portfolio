@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { getDictionary } from "../app/[lang]/dictionaries";
 import { buttonVariants } from "./ui/button";
 
@@ -12,7 +13,7 @@ const Hero = ({
     <>
       <section
         dir={lang === "ar" ? "rtl" : "ltr"}
-        className="w-full max-sm:min-h-screen sm:pb-48 sm:pt-72 container flex flex-col items-center sm:items-start"
+        className="relative w-full min-h-screen container flex flex-col items-center sm:items-start"
       >
         <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full">
           <p className="text-4xl sm:text-6xl">{dict.hero.headline}</p>
@@ -38,6 +39,10 @@ const Hero = ({
               </a>
             ))}
           </div>
+        </div>
+        <div className="absolute bottom-4 left-0 right-0 flex flex-col justify-center items-center gap-2">
+          <p>Learn more about what I do</p>
+          <ChevronDown />
         </div>
       </section>
     </>
