@@ -24,17 +24,8 @@ export default async function Home({
         )}
       ></span>
       <Hero dict={dict} lang={lang} />
-      <div className="container flex flex-col items-center gap-8">
-        <div className="flex flex-col items-center gap-4">
-          <h2 className="text-4xl sm:text-5xl">
-            {dict.headers.projects.headline}
-          </h2>
-          <p className="text-xs sm:text-base">
-            {dict.headers.projects.subHeadline}
-          </p>
-        </div>
-        <Projects dict={dict} lang={lang} />
-      </div>
+
+      <Projects dict={dict} lang={lang} />
     </div>
   );
 }
