@@ -7,7 +7,7 @@ import { Separator } from "./separator";
 import { ModeToggle } from "./toggle";
 import LocaleSwitcher from "../locale-switcher";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 const Navbar = ({
   dict,
@@ -16,37 +16,45 @@ const Navbar = ({
   dict: Awaited<ReturnType<typeof getDictionary>>;
   lang: "en" | "ar";
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const pathname = usePathname();
   const LINKS = [
     {
-      id: 1,
-      href: `/${lang}`,
+      id: "home",
+      href: `/${lang}#`,
       label: dict.headers.home,
     },
     {
-      id: 2,
-      href: `/${lang}/projects`,
+      id: "projects",
+      href: `/${lang}#projects`,
       label: dict.headers.projects.headline,
     },
     {
-      id: 3,
-      href: `/${lang}/about`,
+      id: "about",
+      href: `/${lang}#about`,
       label: dict.headers.about,
     },
     {
-      id: 4,
-      href: `/${lang}/contacts`,
+      id: "contacts",
+      href: `/${lang}#contacts`,
       label: dict.headers.contacts,
     },
   ];
 
-  const isActive = (href: string) => {
-    if (href === `/${lang}`) {
-      return pathname === href;
+  const pathname = usePathname();
+  const params = useParams();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("");
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setActiveTab(window.location.hash.slice(1));
+  }, [params]);
+
+  const isActive = (id: string) => {
+    if (pathname !== `/${lang}`) {
+      return pathname.startsWith(`/${lang}/${id}`);
     } else {
-      return pathname.startsWith(href);
+      if (!activeTab && id === "home") return true;
+      return id === activeTab;
     }
   };
 
@@ -67,22 +75,45 @@ const Navbar = ({
     };
   }, [isMenuOpen]);
 
+  const scrollToTop = () => {
+    window.history.pushState(null, "", " ");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <nav className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] w-auto rounded-xl max-sm:left-2 max-sm:right-2 mx-auto place-self-center fixed top-4 bg-background/60 backdrop-blur-md z-10">
+    <nav className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] w-auto rounded-xl max-sm:left-2 max-sm:right-2 mx-auto place-self-center fixed top-4 bg-background/60 backdrop-blur-md z-20">
       <ul className="hidden sm:flex items-center justify-center">
         {LINKS.map((link) => {
+          if (link.id === "home" && pathname === `/${lang}`)
+            return (
+              <div
+                onClick={() => scrollToTop()}
+                key={link.id}
+                className={cn("px-2 cursor-pointer", {
+                  "relative bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500 hover:from-purple-500/80 hover:to-pink-50/80 [text-shadow:0_0_rgba(0,0,0,0.1)]":
+                    isActive(link.id),
+                  "hover:text-muted-foreground": !isActive(link.id),
+                })}
+              >
+                <li>{link.label}</li>
+                {isActive(link.id) && (
+                  <span className="absolute inset-x-[-3px] w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px"></span>
+                )}
+              </div>
+            );
           return (
             <Link
+              scroll
               key={link.id}
               href={link.href}
               className={cn("px-2", {
                 "relative bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500 hover:from-purple-500/80 hover:to-pink-50/80 [text-shadow:0_0_rgba(0,0,0,0.1)]":
-                  isActive(link.href),
-                "hover:text-muted-foreground": !isActive(link.href),
+                  isActive(link.id),
+                "hover:text-muted-foreground": isActive(link.id),
               })}
             >
               <li>{link.label}</li>
-              {isActive(link.href) && (
+              {isActive(link.id) && (
                 <span className="absolute inset-x-[-3px] w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px"></span>
               )}
             </Link>
@@ -120,17 +151,36 @@ const Navbar = ({
           )}
         >
           <ul className="w-full">
-            {LINKS.map((link) => (
-              <li key={link.id} className="border-b last:border-b-0">
-                <Link
-                  className="block px-4 py-2 "
-                  onClick={() => setIsMenuOpen(false)}
-                  href={link.href}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {LINKS.map((link) => {
+              if (link.id === "home" && pathname === `/${lang}`)
+                return (
+                  <li
+                    key={link.id}
+                    className="border-b last:border-b-0 cursor-pointer"
+                  >
+                    <div
+                      className="block px-4 py-2 "
+                      onClick={() => {
+                        scrollToTop();
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      {link.label}
+                    </div>
+                  </li>
+                );
+              return (
+                <li key={link.id} className="border-b last:border-b-0">
+                  <Link
+                    className="block px-4 py-2 "
+                    onClick={() => setIsMenuOpen(false)}
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
