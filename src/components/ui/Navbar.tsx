@@ -27,23 +27,27 @@ const Navbar = ({
     },
     {
       id: 2,
-      href: "#",
+      href: `/${lang}/projects`,
       label: dict.headers.projects,
     },
     {
       id: 3,
-      href: "#",
+      href: `/${lang}/about`,
       label: dict.headers.about,
     },
     {
       id: 4,
-      href: "#",
+      href: `/${lang}/contacts`,
       label: dict.headers.contacts,
     },
   ];
 
   const isActive = (href: string) => {
-    return `${pathname}` === `${href}`;
+    if (href === `/${lang}`) {
+      return pathname === href;
+    } else {
+      return pathname.startsWith(href);
+    }
   };
 
   useEffect(() => {
