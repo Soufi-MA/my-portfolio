@@ -28,7 +28,12 @@ export default async function RootLayout({
       className="scroll-smooth"
       suppressHydrationWarning
     >
-      <body className={cn(ibm.className, "flex flex-col gap-4")}>
+      <body
+        className={cn(
+          ibm.className,
+          "flex flex-col gap-4 justify-between min-h-screen"
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
