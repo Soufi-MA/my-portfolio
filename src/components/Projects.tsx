@@ -28,7 +28,7 @@ const Projects = ({
   }) => (
     <div className="relative w-full border rounded-xl h-[480px] overflow-hidden group cursor-pointer">
       <Link href={`/${lang}/projects/${project.id}`}>
-        <h2 className="absolute top-4 left-4 right-4 z-10 text-4xl text-center text-white font-semibold">
+        <h2 className="absolute top-4 left-4 right-4 z-10 text-3xl sm:text-4xl text-center text-white font-semibold">
           {project.title}
         </h2>
         <Image
@@ -54,7 +54,7 @@ const Projects = ({
   );
 
   return (
-    <section id="projects" className="container flex flex-col gap-8">
+    <section id="projects" className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {dict.projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
