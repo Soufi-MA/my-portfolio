@@ -1,9 +1,12 @@
 export const ar = {
   headers: {
     home: "الرئيسية",
-    projects: "المشاريع",
+    projects: {
+      headline: "الأعمال",
+      subHeadline: "بعض الأعمال التي عملت عليها",
+    },
     about: "نبذة مختصرة",
-    contacts: "وسائل التواصل",
+    contacts: "التواصل",
     stacks: "التقنيات",
     visit: "زيارة",
     techs: "التقنيات",

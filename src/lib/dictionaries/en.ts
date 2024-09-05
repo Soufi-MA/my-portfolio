@@ -1,7 +1,10 @@
 export const en = {
   headers: {
     home: "Home",
-    projects: "Projects",
+    projects: {
+      headline: "Projects",
+      subHeadline: "Here are some of the projects I've worked on.",
+    },
     about: "About",
     contacts: "Contacts",
     stacks: "Stacks",
