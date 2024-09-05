@@ -1,18 +1,12 @@
+"use client";
+
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
-
-interface Project {
-  id: number;
-  thumbnail: string;
-  title: string;
-  body: string;
-  stack: string[];
-  url: string;
-}
+import useIsVisible from "@/app/hooks/useIsVisible";
 
 const Projects = ({
   dict,
@@ -21,6 +15,8 @@ const Projects = ({
   dict: Awaited<ReturnType<typeof getDictionary>>;
   lang: "ar" | "en";
 }) => {
+  const projectSection = useIsVisible("projects");
+
   const ProjectCard = ({
     project,
   }: {
@@ -54,7 +50,19 @@ const Projects = ({
   );
 
   return (
-    <section id="projects" className="flex flex-col gap-8">
+    <section
+      ref={projectSection}
+      id="projects"
+      className="container flex flex-col gap-8 scroll-mt-28"
+    >
+      <div className="flex flex-col items-center gap-4">
+        <h2 className="text-4xl sm:text-5xl">
+          {dict.headers.projects.headline}
+        </h2>
+        <p className="text-xs sm:text-base">
+          {dict.headers.projects.subHeadline}
+        </p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {dict.projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
