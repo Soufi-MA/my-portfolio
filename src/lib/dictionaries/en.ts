@@ -5,11 +5,19 @@ export const en = {
       headline: "Projects",
       subHeadline: "Here are some of the projects I've worked on.",
     },
-    about: "About",
-    contacts: "Contacts",
+    about: {
+      headline: "About",
+      subHeadline: "Get to know a little more about me.",
+    },
+    contacts: {
+      headline: "Contacts",
+      subHeadline: "Contacts and Social Links",
+    },
+    learnMore: "Learn more about what I do",
     stacks: "Stacks",
     visit: "Visit",
     techs: "Technologies",
+    whoAmI: "Who am I?",
   },
   hero: {
     headline: "Hi, I'm Soufi",
@@ -30,13 +38,8 @@ export const en = {
       },
     ],
   },
-  developer: {
-    name: "Mahmoud Soufi",
-    position1: "Full Stack Developer",
-    position2: "UI/UX",
-  },
   about:
-    "I'm Mahmoud, a Computer Science graduate based in Addis Ababa, Ethiopia, with over 4 years of experience crafting dynamic web experiences. My journey began with the fundamentals of PHP, but my passion for innovation led me to explore the React and Next.js ecosystems, where I now build interactive and performant applications.",
+    "I'm Soufi, a Computer Science graduate based in Addis Ababa, Ethiopia, with over 4 years of experience crafting dynamic web experiences. My journey began with the fundamentals of PHP, but my passion for innovation led me to explore the React and Next.js ecosystems, where I now build interactive and performant applications.",
   contacts: [
     {
       header: "Email:",
