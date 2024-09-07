@@ -1,5 +1,4 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { HashIcon } from "lucide-react";
 
 const About = ({
   dict,
@@ -9,18 +8,15 @@ const About = ({
   lang: "ar" | "en";
 }) => {
   return (
-    <section
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      id="about"
-      className="flex flex-col gap-1"
-    >
-      <a href="#about" className="flex gap-1 items-center font-bold">
-        {dict.headers.about}{" "}
-        <span>
-          <HashIcon size={16} />
-        </span>
-      </a>
-      <p className="font-light">{dict.about}</p>
+    <section id="about" className="container flex flex-col gap-8 scroll-mt-28">
+      <div className="flex flex-col items-center gap-4">
+        <h2 className="text-4xl sm:text-5xl">{dict.headers.about.headline}</h2>
+        <p className="text-xs sm:text-base">{dict.headers.about.subHeadline}</p>
+      </div>
+      <div>
+        <h2 className="text-3xl">{dict.headers.whoAmI}</h2>
+        <p>{dict.about}</p>
+      </div>
     </section>
   );
 };
