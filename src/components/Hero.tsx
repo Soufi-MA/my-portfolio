@@ -12,6 +12,7 @@ const Hero = ({
   return (
     <>
       <section
+        id="home"
         dir={lang === "ar" ? "rtl" : "ltr"}
         className="relative w-full min-h-screen container flex flex-col items-center sm:items-start"
       >
@@ -41,7 +42,7 @@ const Hero = ({
           </div>
         </div>
         <div className="absolute bottom-4 left-0 right-0 flex flex-col justify-center items-center gap-2">
-          <p>Learn more about what I do</p>
+          <p>{dict.headers.learnMore}</p>
           <ChevronDown />
         </div>
       </section>

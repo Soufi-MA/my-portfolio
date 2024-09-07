@@ -1,12 +1,9 @@
-"use client";
-
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
-import useIsVisible from "@/app/hooks/useIsVisible";
 
 const Projects = ({
   dict,
@@ -15,8 +12,6 @@ const Projects = ({
   dict: Awaited<ReturnType<typeof getDictionary>>;
   lang: "ar" | "en";
 }) => {
-  const projectSection = useIsVisible("projects");
-
   const ProjectCard = ({
     project,
   }: {
@@ -51,7 +46,6 @@ const Projects = ({
 
   return (
     <section
-      ref={projectSection}
       id="projects"
       className="container flex flex-col gap-8 scroll-mt-28"
     >
