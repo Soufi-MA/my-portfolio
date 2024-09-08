@@ -10,15 +10,71 @@ export const en = {
       subHeadline: "Get to know a little more about me.",
     },
     contacts: {
-      headline: "Contacts",
-      subHeadline: "Contacts and Social Links",
+      headline: "Contact",
+      subHeadline: "Interested or want to get to know me better?",
     },
     learnMore: "Learn more about what I do",
     stacks: "Stacks",
     visit: "Visit",
     techs: "Technologies",
     whoAmI: "Who am I?",
+    whatCanIDo: "What can I do for you?",
+    whyHireMe: "Why hire me?",
   },
+  whatICanDo: [
+    {
+      title: "Custom Web Development",
+      description:
+        "Create tailored web solutions, from landing pages to full-scale web applications, using modern technologies.",
+    },
+    {
+      title: "API Development & Integration",
+      description:
+        "Design and integrate RESTful or GraphQL APIs for seamless data flow across platforms.",
+    },
+    {
+      title: "E-commerce Solutions",
+      description:
+        "Build scalable and secure e-commerce platforms, integrating payment gateways and third-party services.",
+    },
+    {
+      title: "Deployment & Maintenance",
+      description:
+        "Offer services like website hosting, continuous integration, and long-term maintenance.",
+    },
+  ],
+  whyHireMe: [
+    {
+      title: "Development Speed",
+      description:
+        "I prioritize delivering high-quality projects quickly, using efficient workflows and best practices to meet tight deadlines without compromising on quality.",
+    },
+    {
+      title: "Clean Code",
+      description:
+        "My code is well-organized, scalable, and follows industry standards, making it easy to maintain, understand, and extend in the future.",
+    },
+    {
+      title: "Responsive Design",
+      description:
+        "I ensure your website looks great on all devices, from desktops to smartphones, by creating fully responsive and mobile-friendly designs.",
+    },
+    {
+      title: "SEO Optimization",
+      description:
+        "I implement SEO best practices during development, optimizing your site for search engines to improve its visibility and drive more traffic.",
+    },
+    {
+      title: "Smooth Animations",
+      description:
+        "I enhance user experience with smooth, subtle animations that make interactions more engaging without affecting performance.",
+    },
+    {
+      title: "Comprehensive Testing",
+      description:
+        "I rigorously test every aspect of the website, from functionality to usability, ensuring everything works flawlessly across different platforms and browsers.",
+    },
+  ],
   hero: {
     headline: "Hi, I'm Soufi",
     subheadline: "Fullstack Developer",
