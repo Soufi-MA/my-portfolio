@@ -213,4 +213,24 @@ export const ar = {
       createdAt: new Date(2023, 7),
     },
   ],
+  contact: {
+    placeholders: {
+      name: "الأسم",
+      email: "البريد الإلكتروني",
+      message: "الرسالة",
+    },
+    errorMessages: {
+      name: {
+        min: "يجب ان يحتوي الأسم حرفين على الأقل",
+      },
+      email: {
+        invalid: "الرجاء إدخال بريد إلكتروني صحيح",
+      },
+      message: {
+        min: "يجب ان تحتوي الرسالة على 10 حروف على الأقل",
+        max: "يجب ألا تزيد الرسالة عن 30 حرفًا.",
+      },
+    },
+    send: "إرسال",
+  },
 };

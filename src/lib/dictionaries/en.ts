@@ -213,4 +213,24 @@ export const en = {
       createdAt: new Date(2023, 7),
     },
   ],
+  contact: {
+    placeholders: {
+      name: "Name",
+      email: "Email",
+      message: "Message",
+    },
+    errorMessages: {
+      name: {
+        min: "Name must be at least 2 characters",
+      },
+      email: {
+        invalid: "Plesae enter a valid email.",
+      },
+      message: {
+        min: "Message must be at least 10 characters.",
+        max: "Message must not be longer than 30 characters.",
+      },
+    },
+    send: "Send",
+  },
 };
