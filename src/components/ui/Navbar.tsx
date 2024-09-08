@@ -68,7 +68,7 @@ const Navbar = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
       let currentSection = activeTab;
 
       LINKS.forEach((section) => {
