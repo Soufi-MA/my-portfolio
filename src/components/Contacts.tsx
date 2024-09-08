@@ -1,5 +1,8 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { ExternalLink, HashIcon } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaTelegram } from "react-icons/fa";
+import { LiaTelegram } from "react-icons/lia";
+import ContactForm from "./ui/ContactForm";
 
 const Contacts = ({
   dict,
@@ -20,7 +23,14 @@ const Contacts = ({
         <p className="text-xs sm:text-base">
           {dict.headers.contacts.subHeadline}
         </p>
+        <div className="flex items-center gap-4">
+          <Mail />
+          <Github />
+          <Linkedin />
+          <LiaTelegram size={24} />
+        </div>
       </div>
+      <ContactForm dict={dict} />
     </section>
   );
 };
