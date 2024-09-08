@@ -30,7 +30,6 @@ const Contacts = ({
           <LiaTelegram size={24} />
         </div>
       </div>
-      <ContactForm dict={dict} />
     </section>
   );
 };
