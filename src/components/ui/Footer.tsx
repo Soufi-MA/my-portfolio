@@ -11,7 +11,7 @@ const Footer = ({
   lang: "en" | "ar";
 }) => {
   return (
-    <footer className="w-full py-4 container border-t flex flex-col sm:flex-row gap-4 items-center sm:justify-between">
+    <footer className="absolute bottom-0 left-0 right-0 mx-auto w-full py-4 container border-t flex flex-col sm:flex-row gap-4 items-center sm:justify-between">
       <div className="flex gap-4 items-center">
         <p>Soufi.</p>
         <Separator orientation="vertical" className="h-6" />
