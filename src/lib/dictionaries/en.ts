@@ -270,23 +270,9 @@ export const en = {
     },
   ],
   contact: {
-    placeholders: {
-      name: "Name",
-      email: "Email",
-      message: "Message",
+    copyButton: {
+      click: "CLICK TO COPY",
+      copied: "COPIED",
     },
-    errorMessages: {
-      name: {
-        min: "Name must be at least 2 characters",
-      },
-      email: {
-        invalid: "Plesae enter a valid email.",
-      },
-      message: {
-        min: "Message must be at least 10 characters.",
-        max: "Message must not be longer than 30 characters.",
-      },
-    },
-    send: "Send",
   },
 };
