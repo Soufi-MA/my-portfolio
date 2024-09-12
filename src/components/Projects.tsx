@@ -49,14 +49,6 @@ const Projects = ({
       id="projects"
       className="container flex flex-col gap-8 scroll-mt-28"
     >
-      <div className="flex flex-col items-center gap-4">
-        <h2 className="text-4xl sm:text-5xl">
-          {dict.headers.projects.headline}
-        </h2>
-        <p className="text-xs sm:text-base">
-          {dict.headers.projects.subHeadline}
-        </p>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {dict.projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

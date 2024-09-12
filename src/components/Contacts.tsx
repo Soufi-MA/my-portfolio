@@ -1,8 +1,8 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { FaTelegram } from "react-icons/fa";
 import { LiaTelegram } from "react-icons/lia";
-import ContactForm from "./ui/ContactForm";
+import { Button } from "./ui/button";
+import CopyButton from "./ui/CopyButton";
 
 const Contacts = ({
   dict,
@@ -14,20 +14,20 @@ const Contacts = ({
   return (
     <section
       id="contacts"
-      className="container flex flex-col gap-8 scroll-mt-28"
+      className="container flex flex-col gap-8 min-h-screen justify-center"
     >
-      <div className="flex flex-col items-center gap-4">
-        <h2 className="text-4xl sm:text-5xl">
-          {dict.headers.contacts.headline}
-        </h2>
-        <p className="text-xs sm:text-base">
+      <div className="flex flex-col sm:flex-row items-center gap-8 py-24">
+        <p className="text-5xl sm:text-6xl flex-1 w-full text-center sm:text-start">
           {dict.headers.contacts.subHeadline}
         </p>
-        <div className="flex items-center gap-4">
-          <Mail />
-          <Github />
-          <Linkedin />
-          <LiaTelegram size={24} />
+        <div className="flex flex-col items-center justify-center gap-4 flex-1">
+          <CopyButton dict={dict} />
+          <div className="flex gap-4">
+            <Mail />
+            <Github />
+            <Linkedin />
+            <LiaTelegram size={24} />
+          </div>
         </div>
       </div>
     </section>
