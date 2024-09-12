@@ -20,7 +20,7 @@ const page = async ({
 
   if (!project) return notFound();
   return (
-    <div className="container pt-28 lg:px-0 max-w-[1000px] flex flex-col gap-8">
+    <div className="container pt-28 lg:px-0 max-w-[1000px] flex flex-col pb-28 sm:pb-20 gap-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl sm:text-5xl">{project.title}</h1>
