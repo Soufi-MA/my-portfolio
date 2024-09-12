@@ -12,7 +12,7 @@ export default async function Home({
 }) {
   const dict = await getDictionary(lang);
   return (
-    <div className="flex flex-col gap-16 w-full min-h-screen pb-8">
+    <div className="flex flex-col gap-16 w-full min-h-screen">
       <span
         style={{
           background: "conic-gradient(from 2.35rad,#4ecdc4,#0658f6)",
@@ -29,9 +29,7 @@ export default async function Home({
 
       <Projects dict={dict} lang={lang} />
 
-      <div className="bg-muted mx-4 rounded-xl">
-        <About dict={dict} lang={lang} />
-      </div>
+      <About dict={dict} lang={lang} />
 
       <Contacts dict={dict} lang={lang} />
     </div>
