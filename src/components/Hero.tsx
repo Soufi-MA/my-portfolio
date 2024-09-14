@@ -14,7 +14,9 @@ const Hero = ({
   dict: Awaited<ReturnType<typeof getDictionary>>;
   lang: "en" | "ar";
 }) => {
-  const isMobile = window && window.matchMedia("(max-width: 640px)").matches;
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 640px)").matches;
   return (
     <>
       <section
@@ -25,13 +27,21 @@ const Hero = ({
         <div className="min-h-svh flex flex-col items-center sm:items-start container">
           <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full">
             <TextGenerateEffect
-              lines={[dict.hero.headline, dict.hero.subheadline]}
-              lineClassNames={[
-                "text-4xl sm:text-6xl",
-                "text-3xl sm:text-6xl bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]",
+              lines={[
+                { text: dict.hero.headline, className: "text-4xl sm:text-6xl" },
+                {
+                  text: dict.hero.subheadline,
+                  className:
+                    "text-3xl sm:text-6xl text-3xl sm:text-6xl bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500",
+                },
               ]}
             />
-            <div className="flex gap-2 items-center justify-center sm:justify-start w-full mt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+              className="flex gap-2 items-center justify-center sm:justify-start w-full mt-2"
+            >
               {dict.hero.buttons.map((button) => (
                 <a
                   key={button.id}
@@ -50,7 +60,7 @@ const Hero = ({
                   {button.label}
                 </a>
               ))}
-            </div>
+            </motion.div>
           </div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
