@@ -25,7 +25,7 @@ const Hero = ({
         className="relative w-full"
       >
         <div className="min-h-svh flex flex-col items-center sm:items-start container">
-          <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full">
+          <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full z-10">
             <TextGenerateEffect
               lines={[
                 { text: dict.hero.headline, className: "text-4xl sm:text-6xl" },
@@ -40,7 +40,7 @@ const Hero = ({
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="flex gap-2 items-center justify-center sm:justify-start w-full mt-2"
+              className="flex gap-2 items-center justify-center sm:justify-start w-full mt-2 z-10"
             >
               {dict.hero.buttons.map((button) => (
                 <a
@@ -66,7 +66,7 @@ const Hero = ({
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1 }}
-            className="absolute bottom-4 left-0 right-0 flex flex-col justify-center items-center gap-2"
+            className="absolute bottom-4 left-0 right-0 flex flex-col justify-center items-center gap-2 z-10"
           >
             <p>{dict.headers.learnMore}</p>
             <motion.div

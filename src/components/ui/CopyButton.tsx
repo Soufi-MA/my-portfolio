@@ -32,13 +32,13 @@ const CopyButton = ({
         soufi.m.ahmed@gmail.com
       </span>
 
-      <span className="absolute transition-transform duration-500 translate-y-10 group-hover:translate-y-0">
+      <span className="hidden sm:block absolute transition-transform duration-500 translate-y-10 group-hover:translate-y-0">
         {dict.contact.copyButton.click}
       </span>
 
       <span
         className={cn(
-          "absolute flex gap-2 items-center justify-center transition-transform duration-500 translate-y-20 bg-background z-10 h-full w-full",
+          "absolute flex gap-2 items-center justify-center transition-transform duration-500 translate-y-10 sm:translate-y-20 bg-background z-10 h-full w-full",
           {
             "translate-y-0": active,
           }
