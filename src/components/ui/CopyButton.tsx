@@ -38,7 +38,7 @@ const CopyButton = ({
 
       <span
         className={cn(
-          "absolute flex gap-2 items-center justify-center transition-transform duration-500 translate-y-10 sm:translate-y-20 bg-background z-10 h-full w-full",
+          "absolute flex gap-2 items-center justify-center transition-transform duration-500 translate-y-20 bg-background z-10 h-full w-full",
           {
             "translate-y-0": active,
           }
