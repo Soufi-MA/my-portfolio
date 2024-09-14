@@ -26,21 +26,25 @@ export const en = {
       title: "Custom Web Development",
       description:
         "Create tailored web solutions, from landing pages to full-scale web applications, using modern technologies.",
+      icon: "IconTerminal2",
     },
     {
       title: "API Development & Integration",
       description:
         "Design and integrate RESTful or GraphQL APIs for seamless data flow across platforms.",
+      icon: "IconDatabase",
     },
     {
       title: "E-commerce Solutions",
       description:
         "Build scalable and secure e-commerce platforms, integrating payment gateways and third-party services.",
+      icon: "IconShoppingCart",
     },
     {
       title: "Deployment & Maintenance",
       description:
         "Offer services like website hosting, continuous integration, and long-term maintenance.",
+      icon: "IconWorldWww",
     },
   ],
   whyHireMe: [
