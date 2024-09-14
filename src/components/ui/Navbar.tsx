@@ -8,6 +8,7 @@ import { ModeToggle } from "./toggle";
 import LocaleSwitcher from "../locale-switcher";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const Navbar = ({
   dict,
@@ -111,7 +112,11 @@ const Navbar = ({
   }, [isMenuOpen]);
 
   return (
-    <nav className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] w-auto rounded-xl max-sm:left-2 max-sm:right-2 mx-auto place-self-center fixed top-4 bg-background/60 backdrop-blur-md z-20">
+    <motion.nav
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] w-auto rounded-xl max-sm:left-2 max-sm:right-2 mx-auto place-self-center fixed top-4 bg-background/60 backdrop-blur-md z-20"
+    >
       <ul className="hidden sm:flex items-center justify-center">
         {LINKS.map((link) => {
           return (
@@ -182,7 +187,7 @@ const Navbar = ({
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
