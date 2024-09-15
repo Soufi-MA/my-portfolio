@@ -5,7 +5,6 @@ import { getDictionary } from "../app/[lang]/dictionaries";
 import { buttonVariants } from "./ui/button";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "./ui/background-beams";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const Hero = ({
   dict,
