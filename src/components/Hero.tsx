@@ -14,9 +14,6 @@ const Hero = ({
   dict: Awaited<ReturnType<typeof getDictionary>>;
   lang: "en" | "ar";
 }) => {
-  const isMobile =
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 640px)").matches;
   return (
     <>
       <section
@@ -26,16 +23,16 @@ const Hero = ({
       >
         <div className="min-h-svh flex flex-col items-center sm:items-start container">
           <div className="flex-1 flex flex-col justify-center pb-12 sm:pb-0 h-full z-10">
-            <TextGenerateEffect
-              lines={[
-                { text: dict.hero.headline, className: "text-4xl sm:text-6xl" },
-                {
-                  text: dict.hero.subheadline,
-                  className:
-                    "text-3xl sm:text-6xl text-3xl sm:text-6xl bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500",
-                },
-              ]}
-            />
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="flex flex-col"
+            >
+              <p className="text-4xl sm:text-6xl">{dict.hero.headline}</p>
+              <p className="text-3xl sm:text-6xl bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500">
+                {dict.hero.subheadline}
+              </p>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
