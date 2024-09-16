@@ -8,7 +8,8 @@ import { getDictionary } from "./dictionaries";
 import Footer from "@/components/ui/Footer";
 export const metadata: Metadata = {
   title: "Soufi Portfolio",
-  description: "A Full Stack Developer",
+  description:
+    "Soufi Full Stack developer and a Computer Science graduate based in Addis Ababa, Ethiopia.",
 };
 
 const ibm = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: "500" });
