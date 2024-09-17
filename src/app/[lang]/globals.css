@@ -383,4 +383,9 @@
     overflow: auto;
     padding: var(--padding-v) var(--padding-h);
   }
+
+  #model {
+    height: 100%;
+    width: 100%;
+  }
 }
