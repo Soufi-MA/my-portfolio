@@ -1,11 +1,12 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Circle, Dot } from "lucide-react";
 import { getDictionary } from "../app/[lang]/dictionaries";
 import { buttonVariants } from "./ui/button";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "./ui/background-beams";
 import dynamic from "next/dynamic";
+import { Badge } from "./ui/badge";
 const ModelViewer = dynamic(() => import("./ModelViewer"), {
   ssr: false,
 });
@@ -30,8 +31,15 @@ const Hero = ({
               <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="flex flex-col"
+                className="flex flex-col items-center sm:items-start"
               >
+                <Badge
+                  className="mb-2 flex gap-2 w-max py-2 px-4 bg-background/60 backdrop-blur-md cursor-default"
+                  variant={"secondary"}
+                >
+                  <Circle size={16} fill="green" color="green" />
+                  <p className="text-sm">{dict.hero.availablity}</p>
+                </Badge>
                 <p className="text-4xl sm:text-6xl">{dict.hero.headline}</p>
                 <p className="text-3xl sm:text-6xl bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500">
                   {dict.hero.subheadline}

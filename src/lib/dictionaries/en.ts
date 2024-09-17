@@ -80,6 +80,7 @@ export const en = {
     },
   ],
   hero: {
+    availablity: "Available for work",
     headline: "Hi, I'm Soufi",
     subheadline: "Fullstack Developer",
     buttons: [
