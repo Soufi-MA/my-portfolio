@@ -26,7 +26,7 @@ const Hero = ({
       >
         <div className="min-h-svh flex flex-col items-center pb-24 sm:pb-0 sm:items-start container">
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 items-center justify-evenly w-full z-10 pt-24 sm:pt-0">
-            <div className="flex flex-col justify-center items-center sm:pb-0">
+            <div className="flex flex-col justify-center items-center sm:items-start sm:pb-0">
               <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
