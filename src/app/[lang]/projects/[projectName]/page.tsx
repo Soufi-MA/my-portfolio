@@ -51,26 +51,26 @@ const page = async ({
         {project.images.map((image) => (
           <Fragment key={image.id}>
             <div
-              className="md:app-frame win borderless dark:hidden"
+              className="md:app-frame win borderless dark:hidden border"
               data-url={project.url}
             >
               <Image
-                className="w-full object-cover max-md:rounded-lg"
+                className="w-full object-cover max-md:rounded-lg md:h-[500px]"
                 src={image.url}
                 width={1000}
-                height={640}
+                height={500}
                 alt=""
               />
             </div>
             <div
-              className="hidden dark:block md:app-frame win borderless dark"
+              className="hidden dark:block md:app-frame win borderless dark border"
               data-url={project.url}
             >
               <Image
-                className="w-full object-cover max-md:rounded-lg"
+                className="w-full object-cover max-md:rounded-lg md:h-[500px]"
                 src={image.darkUrl}
                 width={1000}
-                height={640}
+                height={500}
                 alt=""
               />
             </div>
