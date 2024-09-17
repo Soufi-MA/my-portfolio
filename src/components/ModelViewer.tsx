@@ -17,8 +17,8 @@ const ModelViewer = () => {
       <model-viewer
         id="model"
         src={"/robot.glb"}
-        ios-src=""
         alt={`Robot 3D model`}
+        poster={"/poster.png"}
         shadow-intensity="1"
         autoplay
       ></model-viewer>
