@@ -1,25 +1,20 @@
+"use client";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { cn } from "@/lib/utils";
+import { TablerIcon } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import {
-  Icon,
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconDatabase,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
   IconTerminal2,
-  TablerIcon,
+  IconDatabase,
+  IconShoppingCart,
+  IconWorldWww,
 } from "@tabler/icons-react";
 
 type IconName =
   | "IconTerminal2"
   | "IconDatabase"
   | "IconShoppingCart"
-  | "IconWorldWww"; // Add all your icon names here
-
+  | "IconWorldWww";
 function isIconName(value: any): value is IconName {
   const validIconNames: IconName[] = [
     "IconTerminal2",
@@ -30,18 +25,16 @@ function isIconName(value: any): value is IconName {
   return validIconNames.includes(value);
 }
 
-const importIcon = async (
-  iconName: IconName
-): Promise<TablerIcon | undefined> => {
+const importIcon = (iconName: IconName): TablerIcon | undefined => {
   switch (iconName) {
     case "IconTerminal2":
-      return (await import("@tabler/icons-react")).IconTerminal2;
+      return IconTerminal2;
     case "IconDatabase":
-      return (await import("@tabler/icons-react")).IconDatabase;
+      return IconDatabase;
     case "IconShoppingCart":
-      return (await import("@tabler/icons-react")).IconShoppingCart;
+      return IconShoppingCart;
     case "IconWorldWww":
-      return (await import("@tabler/icons-react")).IconWorldWww;
+      return IconWorldWww;
   }
 };
 
@@ -62,15 +55,15 @@ const About = ({
         <p className="text-xl sm:flex-[2]">{dict.about}</p>
       </div>
 
-      <div className="flex flex-col gap-12 items-start">
+      <div className="flex flex-col gap-4 items-start">
         <h2 className="text-4xl sm:flex-1 text-center w-full">
           {dict.headers.whatCanIDo}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 mx-auto">
-          {dict.whatICanDo.map(async (service, index) => {
+          {dict.whatICanDo.map((service, index) => {
             let ImportedIcon;
             if (isIconName(service.icon)) {
-              ImportedIcon = await importIcon(service.icon);
+              ImportedIcon = importIcon(service.icon);
             }
             return (
               <Service
@@ -86,7 +79,7 @@ const About = ({
       </div>
 
       <div className="relative flex flex-col sm:flex-row gap-4 items-start">
-        <h2 className="sm:sticky top-28 pb-14 text-4xl sm:flex-1">
+        <h2 className="sm:sticky top-28 text-4xl sm:flex-1">
           {dict.headers.whyHireMe}
         </h2>
         <div className="sm:flex-[2] flex flex-col gap-8">
