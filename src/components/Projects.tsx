@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
@@ -17,30 +19,43 @@ const Projects = ({
   }: {
     project: Awaited<ReturnType<typeof getDictionary>>["projects"][0];
   }) => (
-    <div className="relative w-full border rounded-xl h-[480px] overflow-hidden group cursor-pointer">
-      <Link href={`/${lang}/projects/${project.id}`}>
-        <h2 className="absolute top-4 left-4 right-4 z-10 text-3xl sm:text-4xl text-center text-white font-semibold">
-          {project.title}
-        </h2>
-        <Image
-          className="h-full w-full rounded-xl group-hover:scale-110 transition-all duration-200 ease-in object-cover"
-          src={project.thumbnail}
-          alt=""
-          height={480}
-          width={660}
-        />
-      </Link>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={project.url}
-        className={cn(
-          buttonVariants({ size: "icon" }),
-          "absolute bottom-4 right-4 z-10 rounded-full text-black bg-white hover:bg-white/80"
-        )}
+    <div
+      className="w-full relative"
+      style={{
+        perspective: "1000px",
+      }}
+    >
+      <motion.div
+        initial={{ rotateX: 10 }}
+        whileInView={{ rotateX: 0 }}
+        viewport={{ amount: 0.75, once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative w-full border rounded-xl h-[480px] overflow-hidden group cursor-pointer"
       >
-        <ExternalLink />
-      </a>
+        <Link href={`/${lang}/projects/${project.id}`}>
+          <h2 className="absolute top-4 left-4 right-4 z-10 text-3xl sm:text-4xl text-center text-white font-semibold">
+            {project.title}
+          </h2>
+          <Image
+            className="h-full w-full rounded-xl group-hover:scale-110 transition-all duration-200 ease-in object-cover"
+            src={project.thumbnail}
+            alt=""
+            height={480}
+            width={660}
+          />
+        </Link>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={project.url}
+          className={cn(
+            buttonVariants({ size: "icon" }),
+            "absolute bottom-4 right-4 z-10 rounded-full text-black bg-white hover:bg-white/80"
+          )}
+        >
+          <ExternalLink />
+        </a>
+      </motion.div>
     </div>
   );
 
