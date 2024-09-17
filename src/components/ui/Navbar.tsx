@@ -112,82 +112,84 @@ const Navbar = ({
   }, [isMenuOpen]);
 
   return (
-    <motion.nav
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] w-auto rounded-xl max-sm:left-2 max-sm:right-2 mx-auto place-self-center fixed top-4 bg-background/60 backdrop-blur-md z-20"
-    >
-      <ul className="hidden sm:flex items-center justify-center">
-        {LINKS.map((link) => {
-          return (
-            <Link
-              passHref
-              scroll
-              key={link.id}
-              href={link.href}
-              className={cn("px-2", {
-                "relative bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500 hover:from-purple-500/80 hover:to-pink-50/80 [text-shadow:0_0_rgba(0,0,0,0.1)]":
-                  isActive(link.id),
-                "hover:text-muted-foreground": !isActive(link.id),
-              })}
-            >
-              <li>{link.label}</li>
-              {isActive(link.id) && (
-                <span className="absolute inset-x-[-3px] w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px"></span>
-              )}
-            </Link>
-          );
-        })}
-      </ul>
-      <Separator className="hidden sm:block" orientation="vertical" />
-      <div className="flex gap-2 items-center justify-center">
-        <ModeToggle />
-        <LocaleSwitcher lang={lang} />
-      </div>
+    <>
+      <motion.nav
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] rounded-xl max-sm:left-2 max-sm:right-2 fixed top-4 bg-background/60 backdrop-blur-md z-20"
+      >
+        <ul className="hidden sm:flex items-center justify-center">
+          {LINKS.map((link) => {
+            return (
+              <Link
+                passHref
+                scroll
+                key={link.id}
+                href={link.href}
+                className={cn("px-2", {
+                  "relative bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 to-pink-500 hover:from-purple-500/80 hover:to-pink-50/80 [text-shadow:0_0_rgba(0,0,0,0.1)]":
+                    isActive(link.id),
+                  "hover:text-muted-foreground": !isActive(link.id),
+                })}
+              >
+                <li>{link.label}</li>
+                {isActive(link.id) && (
+                  <span className="absolute inset-x-[-3px] w-full mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px"></span>
+                )}
+              </Link>
+            );
+          })}
+        </ul>
+        <Separator className="hidden sm:block" orientation="vertical" />
+        <div className="flex gap-2 items-center justify-center">
+          <ModeToggle />
+          <LocaleSwitcher lang={lang} />
+        </div>
 
-      <div className="sm:hidden" ref={dropdownRef}>
-        <div
-          className="flex flex-col items-center justify-center gap-2 h-12 w-8 py-2 px-1.5 cursor-pointer"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <div className="sm:hidden" ref={dropdownRef}>
           <div
-            className={`w-full h-0.5 bg-foreground rounded transition-all duration-200 ease-in-out ${
-              isMenuOpen ? "rotate-45 translate-y-[5px]" : null
-            }`}
-          />
-          <div
-            className={`w-full h-0.5 bg-foreground rounded transition-all duration-200 ease-in-out ${
-              isMenuOpen ? "rotate-[-45deg] translate-y-[-5px]" : null
-            }`}
-          />
+            className="flex flex-col items-center justify-center gap-2 h-12 w-8 py-2 px-1.5 cursor-pointer "
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div
+              className={`w-full h-0.5 bg-foreground rounded transition-all duration-200 ease-in-out ${
+                isMenuOpen ? "rotate-45 translate-y-[5px]" : null
+              }`}
+            />
+            <div
+              className={`w-full h-0.5 bg-foreground rounded transition-all duration-200 ease-in-out ${
+                isMenuOpen ? "rotate-[-45deg] translate-y-[-5px]" : null
+              }`}
+            />
+          </div>
         </div>
-        <div
-          className={cn(
-            "fixed mt-[76px] left-0 right-0 top-0 bg-background/60 backdrop-blur-md border shadow-md rounded-xl h-[180px] flex items-center w-full transition-all duration-200 ease-in-out overflow-hidden",
-            {
-              "mt-[0px] top-[72px] border-0 h-0": !isMenuOpen,
-            }
-          )}
-        >
-          <ul className="w-full">
-            {LINKS.map((link) => {
-              return (
-                <li key={link.id} className="border-b last:border-b-0">
-                  <Link
-                    passHref
-                    className="block px-4 py-2 "
-                    onClick={() => setIsMenuOpen(false)}
-                    href={link.href}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+      </motion.nav>
+      <div
+        className={cn(
+          "fixed mt-[92px] left-2 right-2 top-0 border shadow-md rounded-xl h-[180px] flex items-center transition-all duration-200 ease-in-out overflow-hidden bg-background/60 backdrop-blur-md z-10",
+          {
+            "mt-[0px] top-[72px] border-0 h-0": !isMenuOpen,
+          }
+        )}
+      >
+        <ul className="w-full">
+          {LINKS.map((link) => {
+            return (
+              <li key={link.id} className="border-b last:border-b-0">
+                <Link
+                  passHref
+                  className="block px-4 py-2 "
+                  onClick={() => setIsMenuOpen(false)}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    </motion.nav>
+    </>
   );
 };
 

@@ -32,7 +32,7 @@ export default async function RootLayout({
       <body
         className={cn(
           ibm.className,
-          "flex flex-col gap-4 justify-between min-h-screen relative"
+          "flex flex-col gap-4 justify-between items-center min-h-screen relative"
         )}
       >
         <ThemeProvider
