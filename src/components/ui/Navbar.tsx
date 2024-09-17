@@ -116,7 +116,7 @@ const Navbar = ({
       <motion.nav
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] rounded-xl max-sm:left-2 max-sm:right-2 fixed top-4 bg-background/60 backdrop-blur-md z-20"
+        className="flex items-center justify-between gap-4 px-6 py-4 border shadow-md h-[72px] rounded-xl max-sm:left-2 max-sm:right-2 fixed top-4 bg-background/60 backdrop-blur-md z-30"
       >
         <ul className="hidden sm:flex items-center justify-center">
           {LINKS.map((link) => {
@@ -166,7 +166,7 @@ const Navbar = ({
       </motion.nav>
       <div
         className={cn(
-          "fixed mt-[92px] left-2 right-2 top-0 border shadow-md rounded-xl h-[180px] flex items-center transition-all duration-200 ease-in-out overflow-hidden bg-background/60 backdrop-blur-md z-10",
+          "fixed mt-[92px] left-2 right-2 top-0 border shadow-md rounded-xl h-[180px] flex items-center transition-all duration-200 ease-in-out overflow-hidden bg-background/60 backdrop-blur-md z-20",
           {
             "mt-[0px] top-[72px] border-0 h-0": !isMenuOpen,
           }
