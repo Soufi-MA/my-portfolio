@@ -48,11 +48,27 @@ const About = ({
   return (
     <section
       id="about"
-      className="container flex flex-col gap-24 scroll-mt-28 py-12"
+      className="container flex flex-col gap-24 scroll-mt-28 py-12 overflow-hidden"
     >
       <div className="flex flex-col sm:flex-row gap-4 items-start">
-        <h2 className="text-4xl sm:flex-1">{dict.headers.whoAmI}</h2>
-        <p className="text-xl sm:flex-[2]">{dict.about}</p>
+        <motion.h2
+          initial={{ x: lang === "ar" ? 50 : -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ amount: 0.5, once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl sm:flex-1"
+        >
+          {dict.headers.whoAmI}
+        </motion.h2>
+        <motion.p
+          initial={{ x: lang === "ar" ? -50 : 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ amount: 0.5, once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-xl sm:flex-[2]"
+        >
+          {dict.about}
+        </motion.p>
       </div>
 
       <div className="flex flex-col gap-4 items-start">
@@ -72,6 +88,7 @@ const About = ({
                 description={service.description}
                 icon={ImportedIcon}
                 index={index}
+                lang={lang}
               />
             );
           })}
@@ -84,7 +101,14 @@ const About = ({
         </h2>
         <div className="sm:flex-[2] flex flex-col gap-8">
           {dict.whyHireMe.map((service, i) => (
-            <div key={service.title} className="flex gap-4">
+            <motion.div
+              initial={{ x: lang === "ar" ? 50 : -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ amount: 0.5, once: true }}
+              transition={{ duration: 0.5 }}
+              key={service.title}
+              className="flex gap-4"
+            >
               <p className="text-2xl sm:text-3xl">
                 {(i + 1).toLocaleString(lang)}.
               </p>
@@ -96,7 +120,7 @@ const About = ({
                   {service.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -109,15 +133,21 @@ const Service = ({
   description,
   icon,
   index,
+  lang,
 }: {
   title: string;
   description: string;
   icon: TablerIcon | undefined;
   index: number;
+  lang: "en" | "ar";
 }) => {
   const IconComponent = icon;
   return (
-    <div
+    <motion.div
+      initial={{ x: lang === "ar" ? 50 : -50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ amount: 0.5, once: true }}
+      transition={{ duration: 0.5 }}
       className={cn(
         "flex flex-col lg:border-r py-6 sm:py-10 relative group/feature dark:border-neutral-800",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
@@ -142,7 +172,7 @@ const Service = ({
       <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
