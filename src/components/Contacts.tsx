@@ -49,13 +49,6 @@ const Contacts = ({
                 <Github />
               </a>
               <a
-                href="https://www.linkedin.com/in/mahmoud-soufi-840328264/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin />
-              </a>
-              <a
                 href="https://t.me/SoufiMa"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -25,13 +25,6 @@ const Footer = ({
         >
           <Github size={18} />
         </a>
-        <a
-          href="https://www.linkedin.com/in/mahmoud-soufi-840328264/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Linkedin size={18} />
-        </a>
       </div>
     </footer>
   );
