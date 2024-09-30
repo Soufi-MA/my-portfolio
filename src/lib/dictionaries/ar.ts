@@ -81,7 +81,7 @@ export const ar = {
   ],
   hero: {
     availablity: "متوفر للعمل",
-    headline: "مرحبًا, أنا صوفي",
+    headline: "مرحبًا, أنا محمود",
     subheadline: "مطور ويب",
     buttons: [
       {
