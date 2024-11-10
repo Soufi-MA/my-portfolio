@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { BackgroundBeams } from "./ui/background-beams";
 import dynamic from "next/dynamic";
 import { Badge } from "./ui/badge";
-const ModelViewer = dynamic(() => import("./ModelViewer"), {
-  ssr: false,
-});
+// const ModelViewer = dynamic(() => import("./ModelViewer"), {
+//   ssr: false,
+// });
 
 const Hero = ({
   dict,
@@ -71,7 +71,7 @@ const Hero = ({
                 ))}
               </motion.div>
             </div>
-            <ModelViewer />
+            {/* <ModelViewer /> */}
           </div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
