@@ -150,7 +150,7 @@ export const ar = {
         "PostgreSQL",
         "Next Auth",
       ],
-      url: "https://test.kabu.et/",
+      url: "https://kabu.et/",
       createdAt: new Date(2024, 6),
     },
     {
