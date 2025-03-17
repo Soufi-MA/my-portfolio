@@ -17,15 +17,15 @@ const Footer = ({
         <Separator orientation="vertical" className="h-6" />
         &copy; {new Date().getFullYear()} - @soufi.dev
       </div>
-      <div className="flex gap-2">
-        <a
-          href="https://github.com/Soufi-MA/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Github size={18} />
-        </a>
-      </div>
+      <a
+        className="flex gap-2 items-center justify-center"
+        href="https://github.com/Soufi-MA/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+        <Github size={18} />
+      </a>
     </footer>
   );
 };
