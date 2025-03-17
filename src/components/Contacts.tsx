@@ -1,9 +1,8 @@
 "use client";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { LiaTelegram } from "react-icons/lia";
 import CopyButton from "./ui/CopyButton";
 import { motion } from "framer-motion";
+import MessageButton from "./ui/MessageButton";
 
 const Contacts = ({
   dict,
@@ -34,28 +33,16 @@ const Contacts = ({
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ amount: 0.5, once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center justify-center gap-4 flex-1"
+            className="grid items-center justify-center gap-4 flex-1"
           >
             <CopyButton dict={dict} />
-            <div className="flex gap-4">
-              <a href="mailto:soufi.m.ahmed@gmail.com">
-                <Mail />
-              </a>
-              <a
-                href="https://github.com/Soufi-MA/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github />
-              </a>
-              <a
-                href="https://t.me/SoufiMa"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LiaTelegram size={24} />
-              </a>
+            <div className="relative flex items-center justify-center w-full">
+              <div className="h-1 w-full border-t-2 border-muted" />
+              <div className="absolute bg-background px-2 mx-auto">
+                <p className="">Or</p>
+              </div>
             </div>
+            <MessageButton dict={dict} />
           </motion.div>
         </div>
       </div>

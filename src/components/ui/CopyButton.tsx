@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { useState } from "react";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { CopyCheck } from "lucide-react";
+import { Clipboard, CopyCheck, Mail } from "lucide-react";
 
 const CopyButton = ({
   dict,
@@ -28,12 +28,14 @@ const CopyButton = ({
       onClick={() => handleClick()}
       className="flex items-center justify-center relative text-lg rounded-md border-muted-foreground border-[1px] border-dashed px-4 overflow-hidden group"
     >
-      <span className="transition-transform duration-500 group-hover:-translate-y-10">
-        soufi.m.ahmed@gmail.com
+      <span className="flex items-center gap-2 ransition-transform duration-500 group-hover:-translate-y-10">
+        {dict.contact.copyButton.beforeHover}
+        <Mail className="w-5 h-5" />
       </span>
 
-      <span className="hidden sm:block absolute transition-transform duration-500 translate-y-10 group-hover:translate-y-0">
-        {dict.contact.copyButton.click}
+      <span className="hidden items-center gap-2 sm:flex absolute transition-transform duration-500 translate-y-10 group-hover:translate-y-0">
+        {dict.contact.copyButton.beforeClick}
+        <Clipboard className="w-5 h-5" />
       </span>
 
       <span
@@ -44,8 +46,8 @@ const CopyButton = ({
           }
         )}
       >
-        {dict.contact.copyButton.copied}
-        <CopyCheck />
+        {dict.contact.copyButton.afterClick}
+        <CopyCheck className="w-5 h-5" />
       </span>
     </Button>
   );

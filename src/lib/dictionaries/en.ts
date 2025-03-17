@@ -276,8 +276,14 @@ export const en = {
   ],
   contact: {
     copyButton: {
-      click: "CLICK TO COPY",
-      copied: "COPIED",
+      beforeHover: "Contact via Email",
+      beforeClick: "Copy Email",
+      afterClick: "Email Copied",
+    },
+    messageButton: {
+      beforeHover: "Chat on Telegram",
+      beforeClick: "Open Telegram",
+      afterClick: "Telegram Opened",
     },
   },
 };

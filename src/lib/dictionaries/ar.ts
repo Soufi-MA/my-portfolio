@@ -276,8 +276,14 @@ export const ar = {
   ],
   contact: {
     copyButton: {
-      click: "اظغط للنسخ",
-      copied: "تم النسخ",
+      beforeHover: "تواصل عبر الإيميل",
+      beforeClick: "انسخ الإيميل",
+      afterClick: "تم نسخ الإيميل",
+    },
+    messageButton: {
+      beforeHover: "تواصل على تليغرام",
+      beforeClick: "افتح تليغرام",
+      afterClick: "تم فتح تليغرام",
     },
   },
 };
